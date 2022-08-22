@@ -1,0 +1,54 @@
+.Home-cards {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.Home-cards div {
+    width: 250px;
+    height: 250px;
+}
+
+.Home-cards div img {
+    height: 100%;
+    width: 100%;
+}
+
+.Home-cards h6 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    color: #FBDDBB;
+    margin: 0;
+    margin-top: 35px;
+}
+
+.Home-cards p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.83);
+    margin: 0;
+    margin-top: 14px;
+}
+
+
+@media (max-width: 1200px) {
+    .Home-cards {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 997px) {
+    .Home-cards {
+        padding: 0 2.5rem;
+    }
+}
