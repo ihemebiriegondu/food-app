@@ -171,6 +171,8 @@
     line-height: 21px;
     text-align: center;
     color: #00302E;
+    border: none;
+    outline: none;
 }
 
 footer {
