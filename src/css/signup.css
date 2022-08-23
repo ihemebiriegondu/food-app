@@ -59,15 +59,22 @@
     margin-bottom: 61px;
 }
 
-.signup-form-div form input {
-    width: 94%;
-    background: rgba(255, 255, 255, 0.83);
+.signup-form-div form .input-div {
+    width: 100%;
     border: 1px solid rgba(251, 221, 187, 0.51);
-    border-radius: 5px;
-    outline: none;
-    padding: 2rem 1rem;
-    font-size: 1.1rem;
     margin-bottom: 48px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.signup-form-div form input {
+    width: 90%;
+    background: rgba(255, 255, 255, 0.83);
+    border: none;
+    outline: none;
+    padding: 2rem 0;
+    padding-left: 1rem;
+    font-size: 1.1rem;
 }
 
 .signup-form-div form .btn-div {
@@ -75,6 +82,10 @@
     padding: 0;
     margin: 0;
     margin-bottom: 34px;
+}
+
+.signup-form-div form .btn-div button:hover {
+    cursor: pointer;
 }
 
 .signup-form-div form .option-div {

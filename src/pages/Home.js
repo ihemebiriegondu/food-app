@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+import Logo from '../assests/Group 12.png'
+import menuIcon from '../assests/icons8-menu-24.png'
+
 import googleDownload from '../assests/Google Play Badge.png'
 import appleDownload from '../assests/App Store Badge.png'
 import firstFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 1.png'
@@ -17,6 +21,26 @@ import Homecards from '../components/Homecards'
 const home = () => {
     return (
         <div className='mainHome'>
+            <div className='mainNav'>
+                <nav>
+                    <div className='navbrand'>
+                        <Link to='/' className='navbrandLink'>
+                            <img src={Logo} alt='page logo'></img>
+                            <h4>Lilies</h4>
+                        </Link>
+                    </div>
+
+                    <ul className='links'>
+                        <li><Link className='link1' to='/'>Home</Link></li>
+                        <li><Link className='link2' to='/login'>Login</Link></li>
+                        <li><Link className='link3' to='/signup'>Sign Up</Link></li>
+                    </ul>
+
+                    <div className='menu-icon-container'>
+                        <img src={menuIcon} alt='menu icon' />
+                    </div>
+                </nav>
+            </div>
             <div className='mainHomeSubDiv'>
                 <section className='first-section'>
                     <div className='first-section-intro'>
