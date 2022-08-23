@@ -219,7 +219,7 @@ footer {
     font-size: 14px;
     line-height: 24px;
     font-feature-settings: 'salt' on, 'liga' off;
-    color: #EEEFF4;
+    color: #EEEFF4 !important;
 }
 
 footer hr {
@@ -243,7 +243,7 @@ footer hr {
     font-size: 14px;
     line-height: 24px;
     font-feature-settings: 'salt' on, 'liga' off;
-    color: #D9DBE1;
+    color: #D9DBE1 !important;
 }
 
 .copyright img {

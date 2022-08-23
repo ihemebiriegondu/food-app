@@ -1,3 +1,7 @@
+/*a:hover {
+    color: inherit;
+}*/
+
 .mainNav {
     background: #00302E;
     width: 100%;
@@ -10,6 +14,7 @@ nav {
     width: 90%;
     margin: auto;
     align-items: center;
+    padding-top: 3rem;
 }
 
 .navbrand {
@@ -25,7 +30,7 @@ nav {
 .navbrand img {
     width: 57.48px;
     height: 67px;
-    margin-right: 1rem;
+    margin-right: 1.6rem;
 }
 
 .navbrandLink h4 {
@@ -57,7 +62,7 @@ li {
 }
 
 .link1 {
-    color: #FBDDBB;
+    color: #FBDDBB !important;
 }
 
 .link1,
@@ -66,13 +71,13 @@ li {
 }
 
 .link2 {
-    color: rgba(255, 255, 255, 0.87);
+    color: rgba(255, 255, 255, 0.87) !important;
 }
 
 .link3 {
     font-weight: 600 !important;
     font-size: 17px !important;
-    color: #00302E;
+    color: #00302E !important;
     padding: 10px 38px;
     background: #E2B887;
     border-radius: 7px;

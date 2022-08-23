@@ -21,7 +21,7 @@ const DashboardNav = () => {
                 </Link>
             </div>
 
-            <ul className='links'>
+            <ul className='dashboard-links'>
                 <li><Link className='link' to='/dashboard'><AiFillHome /> Dashboard</Link></li>
                 <li><Link className='link' to='/profile'><BiUserCircle /> Your Profile</Link></li>
                 <li><Link className='link' to='/orders'><BsFillCalendarFill /> Orders</Link></li>
