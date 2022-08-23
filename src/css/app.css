@@ -1,7 +1,7 @@
-body {
+.mainNav {
     background: #00302E;
     width: 100%;
-    overflow-x: hidden;
+    height: 100%;
 }
 
 nav {
