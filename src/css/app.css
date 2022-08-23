@@ -1,5 +1,7 @@
-.mainNav {
+body {
     background: #00302E;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 nav {
