@@ -4,7 +4,8 @@
 
 .mainHome {
     width: 100%;
-    overflow-x: hidden
+    overflow-x: hidden;
+    background: #00302E;
 }
 
 .mainHomeSubDiv {
@@ -384,7 +385,7 @@ footer hr {
         padding: 15px 0 15px 16px;
         width: 299px;
     }
-    
+
     .forth-section button {
         margin-left: 8px;
         padding: 14px 40px;
@@ -442,12 +443,12 @@ footer hr {
         padding: 15px 0 15px 16px;
         width: 260px;
     }
-    
+
     .forth-section button {
         margin-left: 8px;
         padding: 14px 40px;
     }
-    
+
 }
 
 @media (max-width: 576px) {

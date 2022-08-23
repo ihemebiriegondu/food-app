@@ -1,7 +1,5 @@
-body {
+.mainNav {
     background: #00302E;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 nav {
@@ -84,7 +82,7 @@ li {
 }
 
 .menu-icon-container img {
-    width: 2rem;
+    width: 1.7rem;
 }
 
 
@@ -95,5 +93,21 @@ li {
 
     .links {
         display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbrand img {
+        width: 51.48px;
+        height: 61px;
+        margin-right: 1rem;
+    }
+    
+    .navbrandLink h4 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 31px;
+        color: #FFFFFF;
     }
 }

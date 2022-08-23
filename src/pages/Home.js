@@ -44,8 +44,8 @@ const home = () => {
                 <section className='third-section'>
                     <div className='third-section-cards-container'>
                         <Homecards HomeCardImage={secondFood} HomeCardTitle={'Stir fry Pasta'} HomeCardText={'Stir fry pasta yada yada yada because of Sesan'} />
-                        <Homecards HomeCardImage={thirdFood} HomeCardTitle={'Stir fry Pasta'} HomeCardText={'Stir fry pasta yada yada yada because of Sesan'} />
-                        <Homecards HomeCardImage={forthFood} HomeCardTitle={'Stir fry Pasta'} HomeCardText={'Stir fry pasta yada yada yada because of Sesan'} />
+                        <Homecards HomeCardImage={thirdFood} HomeCardTitle={'Meat Balls'} HomeCardText={'Stir fry pasta yada yada yada because of Sesan'} />
+                        <Homecards HomeCardImage={forthFood} HomeCardTitle={'Burger Meal'} HomeCardText={'Stir fry pasta yada yada yada because of Sesan'} />
                     </div>
                 </section>
 
