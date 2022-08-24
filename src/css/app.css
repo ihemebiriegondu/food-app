@@ -14,7 +14,7 @@ nav {
     width: 90%;
     margin: auto;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 3rem !important;
 }
 
 .navbrand {
