@@ -2,11 +2,10 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 import Logo from '../assests/Group 12.png'
-import menuIcon from '../assests/icons8-menu-24.png'
 
 import { AiFillHome } from 'react-icons/ai'
 import { BiUserCircle } from 'react-icons/bi'
-import { BsFillCalendarFill } from 'react-icons/bs'
+import { IoCalendarClear } from 'react-icons/io5'
 import { FaShoppingCart } from 'react-icons/fa'
 
 import '../css/dashboardnav.css'
@@ -14,23 +13,19 @@ import '../css/dashboardnav.css'
 const DashboardNav = () => {
     return (
         <nav className='dashboard-nav'>
-            <div className='dashboard-navbrand'>
+            <div className='dashboard-navbrand d-xl-block d-none'>
                 <Link to='/' className='dashboard-navbrandLink'>
                     <img src={Logo} alt='page logo'></img>
                     <h4>Lilies</h4>
                 </Link>
             </div>
 
-            <ul className='dashboard-links'>
-                <li><Link className='link' to='/dashboard'><AiFillHome /> Dashboard</Link></li>
-                <li><Link className='link' to='/profile'><BiUserCircle /> Your Profile</Link></li>
-                <li><Link className='link' to='/orders'><BsFillCalendarFill /> Orders</Link></li>
-                <li><Link className='link' to='/cart'><FaShoppingCart /> Your Cart</Link></li>
+            <ul className='dashboard-links d-xl-block d-none'>
+                <li><Link className='link active' to='/dashboard'><AiFillHome className='dashboard-icon me-3' /> <span>Dashboard</span></Link></li>
+                <li><Link className='link' to='/profile'><BiUserCircle className='dashboard-icon me-3' /> <span>Your Profile</span></Link></li>
+                <li><Link className='link link-with-tag' to='/orders'><span><IoCalendarClear className='dashboard-icon me-3' /> Orders</span> <span className='dashboard-tags order-tag'>6</span></Link></li>
+                <li><Link className='link link-with-tag' to='/cart'><span><FaShoppingCart className='dashboard-icon me-3' /> Your Cart</span> <span className='dashboard-tags cart-tag'>6</span></Link></li>
             </ul>
-
-            <div className='menu-icon-container'>
-                <img src={menuIcon} alt='menu icon' />
-            </div>
         </nav>
     )
 }

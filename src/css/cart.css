@@ -1,0 +1,141 @@
+.cart-backdrop {
+    display: none;
+}
+
+.cart-container {
+    position: fixed;
+    top: 4px;
+    bottom: 0;
+    right: 0;
+    background: #FFFFFF;
+    width: 60%;
+    padding: 52px 62px;
+    overflow-y: auto;
+}
+
+.cart-container h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302E;
+    margin-bottom: 24px;
+}
+
+.table-container {
+    width: 100%;
+}
+
+.tableHeader {
+    width: 100%;
+    margin-bottom: 36px !important;
+}
+
+.table-container .tableHeader p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 33px;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.table-container ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.table-container li {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 56px !important;
+}
+
+.table-container li .first-row-of-checkout {
+    display: flex;
+}
+
+.table-container img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+.table-container .foodname {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302E;
+    margin-bottom: 0;
+}
+
+.table-container .remove {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    color: #C92C33;
+    margin-top: 0;
+}
+
+.other-p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302E;
+    margin: auto;
+}
+
+.total-div {
+    text-align: end;
+    padding-right: 2rem;
+}
+
+.total-div p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.total-div p span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 33px;
+    color: #00302E;
+    margin-left: 26px;
+}
+
+.cart-container .button-div {
+    width: 100%;
+    margin: auto;
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+.cart-container button {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 27px;
+    text-align: center;
+    color: #F3C294;
+    background: #00302E;
+    padding: 17px 0;
+    width: 80%;
+    margin: auto;
+}

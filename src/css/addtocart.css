@@ -1,0 +1,100 @@
+.backdrop {
+    position: fixed;
+    top: 1px;
+    bottom: 0;
+    width: 100%;
+    background: rgba(196, 196, 196, 0.42);
+}
+
+.addtocart-backdrop {
+    display: none;
+}
+
+.addtocart-container {
+    position: fixed;
+    top: 4px;
+    bottom: 0;
+    right: 0;
+    background: #FFFFFF;
+    width: 37%;
+    padding: 128px 64px 117px 64px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.addtocart-container img {
+    width: 230px;
+    height: 230px;
+    margin-bottom: 28px;
+}
+
+.addtocart-container h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302E;
+    margin-bottom: 17px;
+}
+
+.addtocart-container p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.69);
+}
+
+.addtocart-container .cart-amount-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 41px;
+    margin-bottom: 51px;
+}
+
+.addtocart-container .cart-amount-div p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302E;
+}
+
+.addtocart-container .add-to-cart-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addtocart-container .add-to-cart-button-counter span {
+    padding: 16px 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 27px;
+    text-align: center;
+    color: #00302E;
+}
+
+.addtocart-container .add-to-cart-button-counter span:nth-of-type(1),
+.addtocart-container .add-to-cart-button-counter span:nth-of-type(3) {
+    background: #F3C294;
+}
+
+.add-to-cart-button-container button {
+    background: #00302E;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 27px;
+    text-align: center;
+    color: #FBFBFB;
+    padding: 16px 30px;
+}

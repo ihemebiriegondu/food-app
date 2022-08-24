@@ -129,6 +129,10 @@
 
 
 @media (max-width: 992px) {
+    .mainsignup {
+        padding: 0;
+    }
+
     .mainsignup-div {
         display: flex;
         flex-direction: column;
@@ -146,17 +150,32 @@
         padding-top: 100px;
         padding-bottom: 63px;
     }
+
+    .signup-form-div form {
+        margin: auto;
+        width: 85%;
+    }
 }
 
 @media (max-width: 768px) {
     .mainsignup-div {
         width: 80%;
     }
+
+    .signup-form-div form {
+        margin: auto;
+        width: 90%;
+    }
 }
 
 @media (max-width: 678px) {
     .mainsignup-div {
         width: 90%;
+    }
+
+    .signup-form-div form {
+        margin: auto;
+        width: 95%;
     }
 }
 
