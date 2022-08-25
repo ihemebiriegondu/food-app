@@ -10,8 +10,6 @@ import forthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 8.png'
 import fifthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 9.png'
 import sixthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 10.png'
 
-import { RiMenu2Line } from 'react-icons/ri'
-
 
 import '../css/dashboard.css'
 import Menu from '../components/Menu'
@@ -33,13 +31,12 @@ const Dashboard = () => {
     return (
         <div className='mainDashboard'>
             <div className='row'>
-                <div className='col-xl-3 col-1 mynav p-0'>
-                    <div className='dashboard-menu-icon d-xl-none d-block text-center pt-5'>
-                        <RiMenu2Line className='fs-4' />
-                    </div>
+                <div className='col-xl-3 col-sm-1 col-2 p-0'></div>
+                <div className='col-xl-3 col-sm-1 col-2 p-0 mynav'>
                     <DashboardNav />
                 </div>
-                <div className='col-xl-9 col-11 dashboard-container'>
+
+                <div className='col-xl-9 col-sm-11 col-10 dashboard-container'>
                     <div className='dashboard-container-div'>
                         <div className='dashboard-header'>
                             <div>

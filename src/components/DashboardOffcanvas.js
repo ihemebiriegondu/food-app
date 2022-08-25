@@ -3,7 +3,7 @@ import { Container, Navbar, Offcanvas } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Logo from '../assests/Group 12.png'
 
-function OffcanvasExample() {
+function DashboardOffcanvas() {
     return (
         <Navbar bg="transparent" expand='md' className="mb-3">
             <Container fluid className="p-0">
@@ -37,4 +37,4 @@ function OffcanvasExample() {
     );
 }
 
-export default OffcanvasExample;
+export default DashboardOffcanvas;

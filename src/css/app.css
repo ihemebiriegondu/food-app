@@ -1,6 +1,19 @@
-/*a:hover {
-    color: inherit;
-}*/
+.btn,
+.btn-close {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url(../assests/icons8-menu-24.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
 
 .mainNav {
     background: #00302E;
@@ -99,7 +112,21 @@ li {
     }
 
     .links {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0 0 1rem !important;
+    }
+
+    .link1,
+    .link2,
+    .link3 {
+        margin: 0;
+        color: #00302E !important;
+        padding: 0;
+        background: none !important;
+        margin-bottom: 1rem;
+        font-size: 21px !important;
+        font-weight: normal !important;
     }
 }
 
@@ -109,7 +136,7 @@ li {
         height: 61px;
         margin-right: 1rem;
     }
-    
+
     .navbrandLink h4 {
         font-family: 'Poppins';
         font-style: normal;

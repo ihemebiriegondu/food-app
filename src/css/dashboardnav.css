@@ -7,6 +7,17 @@
     width: 100%;
 }
 
+.diff-menu-icon span {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url(../assests/icons8-menu-32.png) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
 .dashboard-navbrand {
     padding: 125px 0;
 }
@@ -70,6 +81,7 @@
 .dashboard-icon {
     width: 24px;
     height: 24px;
+    margin-right: 0.5rem;
 }
 
 .link-with-tag {
@@ -98,14 +110,45 @@
     border: 1px solid #F3C294;
 }
 
+@media (max-width: 1200px) {
+    .dashboard-menu-icon {
+        margin-bottom: 10rem;
+    }
+
+    .content-to-be-hidden {
+        display: none;
+    }
+
+    .dashboard-links li {
+        padding: 0 !important;
+        text-align: center;
+    }
+
+    .dashboard-icon {
+        margin-right: 0 !important;
+    }
+
+    .link {
+        padding: 0 !important;
+        margin-bottom: 2rem;
+    }
+
+    .link.active {
+        background: none !important;
+    }
+
+    .link-with-tag {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4rem !important;
+    }
+}
+
 
 @media (max-width: 768px) {
     .menu-icon-container {
         display: block;
-    }
-
-    .dashboard-links {
-        display: none;
     }
 }
 
