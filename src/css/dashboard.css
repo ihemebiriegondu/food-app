@@ -2,6 +2,10 @@
     margin: 0 !important;
 }
 
+.your-order-open:hover{
+    cursor: pointer;
+}
+
 .mainDashboard {
     height: 100%;
     width: 100%;
@@ -12,10 +16,11 @@
 .mynav {
     background: #FBFBFB;
     border-radius: 20px;
-    width: 100%;
+    width: 25% !important;
     top: 0;
     bottom: 0;
     position: absolute;
+    transition: all 0.5s ease-in-out;
 }
 
 .dashboard-container {
@@ -58,13 +63,31 @@
 
 
 
+
+@media (max-width: 1200px) {
+    .mynav {
+        width: 8.33% !important;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .mynav.active {
+        width: 320px !important;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
 @media (max-width: 700px) {
     .dashboard-container-div {
         padding: 139px 20px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
+    .mynav {
+        width: 16.67% !important;
+        transition: all 0.5s ease-in-out;
+    }
+
     .dashboard-header {
         display: flex;
         flex-direction: column-reverse;

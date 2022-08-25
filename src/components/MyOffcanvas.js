@@ -17,7 +17,7 @@ function OffcanvasExample() {
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-md`}
                     aria-labelledby={`offcanvasNavbarLabel-expand-md`}
-                    placement="end"
+                    placement="end" className='pt-5 pe-3'
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>

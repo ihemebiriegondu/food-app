@@ -28,11 +28,12 @@ const menuData = [
 
 
 const Dashboard = () => {
+
     return (
         <div className='mainDashboard'>
             <div className='row'>
                 <div className='col-xl-3 col-sm-1 col-2 p-0'></div>
-                <div className='col-xl-3 col-sm-1 col-2 p-0 mynav'>
+                <div className='p-0 mynav'>
                     <DashboardNav />
                 </div>
 
