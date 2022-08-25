@@ -5,9 +5,10 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    transition: all 0.5s ease-in-out;
 }
 
-.diff-menu-icon span {
+/*.diff-menu-icon span {
     display: inline-block;
     width: 1.5em;
     height: 1.5em;
@@ -16,6 +17,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
+}*/
+
+.dashboard-menu-icon svg:hover {
+    cursor: pointer;
 }
 
 .dashboard-navbrand {
@@ -81,7 +86,7 @@
 .dashboard-icon {
     width: 24px;
     height: 24px;
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
 }
 
 .link-with-tag {
@@ -116,7 +121,66 @@
     }
 
     .content-to-be-hidden {
+        transition: all 0.5s ease-in-out;
         display: none;
+    }
+
+    .content-to-be-hidden.active {
+        display: inline-block;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .dashboard-nav.active {
+        align-items: flex-start !important;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .dashboard-nav.active .dashboard-menu-icon {
+        margin-bottom: 0;
+        margin-left: 1.5rem;
+    }
+
+    .dashboard-nav.active .dashboard-navbrand {
+        margin-left: 1.5rem;
+    }
+
+    .dashboard-nav.active .dashboard-links li {
+        margin: 0 !important;
+        list-style-type: none !important;
+        width: 100% !important;
+        padding: 0 27px !important;
+        margin-bottom: 2rem !important;
+        text-align: start !important;
+    }
+
+    .dashboard-nav.active .dashboard-icon {
+        width: 24px !important;
+        height: 24px !important;
+        margin-right: 0.7rem !important;
+    }
+
+    .dashboard-nav.active .link {
+        color: #707070 !important;
+        text-decoration: none;
+        padding: 1rem !important;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 0 !important;
+    }
+
+    .dashboard-nav.active .link.active {
+        color: #000000 !important;
+        background: #EFEFEF !important;
+        border-radius: 12px;
+    }
+
+    .dashboard-nav.active .link-with-tag {
+        display: flex;
+        justify-content: space-between !important;
+
+        text-align: start !important;
+        align-items: flex-start !important;
+        margin-bottom: 0 !important;
     }
 
     .dashboard-links li {
@@ -164,6 +228,5 @@
         font-style: normal;
         font-weight: 700;
         font-size: 31px;
-        color: #FFFFFF;
     }
 }
