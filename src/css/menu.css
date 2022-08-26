@@ -65,6 +65,10 @@
     color: #06E775;
 }
 
+.add-to-cart-button:hover {
+    cursor: pointer;
+}
+
 
 @media (max-width: 400px) {
     .menu-card {

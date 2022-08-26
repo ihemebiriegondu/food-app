@@ -1,5 +1,31 @@
 .checkout-backdrop {
-    display: none;
+    width: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.checkout-backdrop.active {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.checkout-backdrop.active .checkout-container {
+    visibility: visible;
+    width: 37% !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+.checkout-container {
+    position: fixed;
+    top: 4px;
+    bottom: 0;
+    right: 0;
+    background: #FFFFFF;
+    visibility: hidden;
+    width: 0 !important;
+    padding: 128px 64px 117px 64px;
+    overflow-y: auto;
+    text-align: center;
+    transition: all 0.5s ease-in-out !important;
 }
 
 .checkout-container {
@@ -38,7 +64,7 @@
     margin-bottom: 47px;
 }
 
-.checkout-container form button {
+.checkout-container form button, .checkout-container button {
     background: #00302E;
     padding: 16px 0;
     width: 100%;
@@ -49,4 +75,12 @@
     line-height: 27px;
     text-align: center;
     color: #F3C294;
+}
+
+.checkout-container .gobackdiv {
+    text-align: start;
+}
+
+.checkout-container .goback {
+    width: 30% !important;
 }

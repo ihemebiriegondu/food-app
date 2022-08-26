@@ -94,6 +94,10 @@
     justify-content: space-between;
 }
 
+.link-with-tag:hover {
+    cursor: pointer;
+}
+
 .dashboard-tags {
     border-radius: 5px;
     font-family: 'Roboto';

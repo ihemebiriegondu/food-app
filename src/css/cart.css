@@ -1,5 +1,17 @@
 .cart-backdrop {
-    display: none;
+    width: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.cart-backdrop.active {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.cart-backdrop.active .cart-container {
+    visibility: visible;
+    width: 60% !important;
+    transition: all 0.5s ease-in-out !important;
 }
 
 .cart-container {
@@ -8,9 +20,11 @@
     bottom: 0;
     right: 0;
     background: #FFFFFF;
-    width: 60%;
+    visibility: hidden;
+    width: 0 !important;
     padding: 52px 62px;
     overflow-y: auto;
+    transition: all 0.5s ease-in-out !important;
 }
 
 .cart-container h4 {
@@ -138,4 +152,51 @@
     padding: 17px 0;
     width: 80%;
     margin: auto;
+}
+
+
+@media (max-width: 1330px) {
+    .cart.backdrop.active .cart-container {
+        visibility: visible;
+        width: 70% !important;
+        transition: all 0.5s ease-in-out !important;
+    }
+}
+
+@media (max-width: 1140px) {
+    .cart.backdrop.active .cart-container {
+        visibility: visible;
+        width: 80% !important;
+        transition: all 0.5s ease-in-out !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .cart.backdrop.active .cart-container {
+        visibility: visible;
+        width: 90% !important;
+        transition: all 0.5s ease-in-out !important;
+    }
+}
+
+@media (max-width: 890px) {
+    .cart.backdrop.active .cart-container {
+        visibility: visible;
+        width: 100% !important;
+        transition: all 0.5s ease-in-out !important;
+    }
+}
+
+@media (max-width: 573px) {
+    .cart-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 573px) {
+    .cart-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
 }

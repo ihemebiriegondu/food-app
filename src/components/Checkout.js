@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/checkout.css'
+import GobackButton from './GobackButton'
 
 
 const Checkout = () => {
@@ -23,6 +24,10 @@ const Checkout = () => {
                         </div>
                         <button>Make Payment</button>
                     </form>
+                </div>
+
+                <div className='gobackdiv'>
+                    <GobackButton buttontext={'Go Back'} />
                 </div>
             </div>
         </div>

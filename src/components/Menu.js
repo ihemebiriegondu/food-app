@@ -3,6 +3,13 @@ import React from 'react'
 import '../css/menu.css'
 
 const Menu = ({ menuData }) => {
+
+    function openAddToCart() {
+        const addtocartBackdrop = document.querySelector(".addtocart-backdrop");
+
+        addtocartBackdrop.classList.add("active")
+    }
+
     return (
         <div className='row row-cols-lg-3 row-cols-sm-2 row-cols-1'>
 
@@ -15,7 +22,7 @@ const Menu = ({ menuData }) => {
                             <div><p>{item?.foodInfo}</p></div>
                             <div className='menu-amount-container'>
                                 <p>{item?.foodAmount}</p>
-                                <p>Add to cart</p>
+                                <p onClick={openAddToCart} className='add-to-cart-button'>Add to cart</p>
                             </div>
                         </div>
                     </div>
