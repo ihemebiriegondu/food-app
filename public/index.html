@@ -27,6 +27,18 @@
 
 <body>
   <script>
+
+    function removeTask(event) {
+      let allFoods = Array.from(JSON.parse(localStorage.getItem("allFoods")));
+      allFoods.forEach(food => {
+        if (food.food === event.parentNode.children[1].value) {
+          allFoods.splice(allFoods.indexOf(food), 1);
+        }
+      });
+      localStorage.setItem("allFoods", JSON.stringify(allFoods));
+      event.parentElement.remove();
+    }
+
     function showBtnSignUpFunction() {
       const signupPasswordInput = document.querySelector("#signup-password input")
 
