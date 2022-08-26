@@ -41,15 +41,3 @@ function AddtoCartSection() {
 }
 
 export default AddtoCartSection
-
-/*
- addToCartFunction();
-
- 
-
-function addToCartFunction() {
-        
-
-        localStorage.setItem("foods", JSON.stringify([...JSON.parse(localStorage.getItem("foods") || "[]"),
-        {  }]));
-    } */
