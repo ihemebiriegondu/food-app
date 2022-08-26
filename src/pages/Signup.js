@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import '../css/signup.css'
 
 const Signup = () => {
+
   let navigate = useNavigate();
 
   return (

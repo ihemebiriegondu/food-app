@@ -1,21 +1,23 @@
 import React from "react";
+import { useEffect } from "react";
 import '../css/cart.css'
 
 function AddtoCartSection() {
 
-    window.onload = loadCartFunction;
+    useEffect(() => {
+        loadCartFunction()
+    }, [])
 
     function loadCartFunction() {
         if (localStorage.getItem("allFoods") == null) return;
 
         let allFoods = Array.from(JSON.parse(localStorage.getItem("allFoods")));
-        console.log(allFoods)
 
         allFoods.forEach(food => {
-            const list = document.getElementById("cart-list");
+            const cartList = document.getElementById("cart-list");
 
-            const li = document.createElement("li");
-            li.innerHTML =
+            const lifirst = document.createElement("li");
+            lifirst.innerHTML =
 
                 `   <div class='row align-items-center div'>
                         <div class='col-7 first-row-of-checkout'>
@@ -30,7 +32,19 @@ function AddtoCartSection() {
                         <p class='col-2 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
                     </div>
                 `;
-            list.insertBefore(li, list.children[0]);
+            cartList.insertBefore(lifirst, cartList.children[0]);
+            const cartListList = document.querySelectorAll("#cart-list li")
+            document.getElementById("cartAmount").textContent = cartListList.length;
+
+            const cartListToAdd = document.querySelectorAll("#cart-list li #amounttoadd")
+            let cartListSum = 0;
+
+            for (let i = 0; i < cartListToAdd.length; i++) {
+                const newCartListToAdd = parseInt(cartListToAdd[i].textContent)
+                cartListSum += newCartListToAdd;
+            }
+            document.getElementById("totalCheckoutValue").textContent = cartListSum;
+
         });
     }
 
@@ -45,13 +59,10 @@ function AddtoCartSection() {
 
         const totalAmount = foodAmount * foodQuantity
 
-        const list = document.getElementById("cart-list")
+        const cartList = document.getElementById("cart-list")
 
+        if (foodQuantity === "" || foodQuantity === "0") return;
 
-
-        if (foodQuantity === "" || foodQuantity === "0") {
-            return
-        }
 
         localStorage.setItem("allFoods", JSON.stringify([...JSON.parse(localStorage.getItem("allFoods") || "[]"),
         {
@@ -63,8 +74,8 @@ function AddtoCartSection() {
         }]));
 
 
-        const li = document.createElement("li");
-        li.innerHTML =
+        const licart = document.createElement("li");
+        licart.innerHTML =
 
             `
             <div class='row align-items-center div'>
@@ -77,10 +88,23 @@ function AddtoCartSection() {
                 </div>
                 <p class='col-1 other-p'>${Quantity.textContent}</p>
                 <p class='col-2 other-p'>N <span>${Amount.textContent}</span>.00</p>
-                <p class='col-2 other-p'>N <span>${totalAmount.toString()}</span>.00</p>
+                <p class='col-2 other-p'>N <span id='amounttoadd'>${totalAmount.toString()}</span>.00</p>
             </div>
         `;
-        list.insertBefore(li, list.children[0]);
+        cartList.insertBefore(licart, cartList.children[0]);
+        const cartListList = document.querySelectorAll("#cart-list li")
+        document.getElementById("cartAmount").textContent = cartListList.length;
+
+        const cartListToAdd = document.querySelectorAll("#cart-list li #amounttoadd")
+        let cartListSum = 0;
+
+        for (let i = 0; i < cartListToAdd.length; i++) {
+            const newCartListToAdd = parseInt(cartListToAdd[i].textContent)
+            cartListSum += newCartListToAdd;
+        }
+        document.getElementById("totalCheckoutValue").textContent = cartListSum;
+
+        Quantity.textContent = "0";
 
 
         /*var current_tasks = document.querySelectorAll(".remove");
@@ -89,6 +113,17 @@ function AddtoCartSection() {
                 this.parentNode.remove();
             }
         }*/
+
+        /*function removeTask(event) {
+      let allFoods = Array.from(JSON.parse(localStorage.getItem("allFoods")));
+      allFoods.forEach(food => {
+        if (food.food === event.parentNode.children[1].value) {
+          allFoods.splice(allFoods.indexOf(food), 1);
+        }
+      });
+      localStorage.setItem("allFoods", JSON.stringify(allFoods));
+      event.parentElement.remove();
+    } */
 
     }
 

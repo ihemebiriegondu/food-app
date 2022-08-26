@@ -132,16 +132,6 @@
     color: rgba(0, 0, 0, 0.69);
 }
 
-.total-div p span {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 33px;
-    color: #00302E;
-    margin-left: 26px;
-}
-
 .orders-container .button-div {
     width: 100%;
     margin: auto;

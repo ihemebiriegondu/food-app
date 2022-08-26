@@ -3,11 +3,11 @@ import DashboardNav from '../components/DashboardNav'
 import AddtoCart from '../components/AddtoCart.js'
 
 import heroPerson from '../assests/40w 1.png'
-import firstMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 5 (3).png'
-import secondMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 6.png'
-import thirdMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 7.png'
-import forthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 8.png'
-import fifthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 9.png'
+import firstMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 4.png'
+import secondMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 2.png'
+import thirdMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 3.png'
+import forthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 1.png'
+import fifthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 5 (4).png'
 import sixthMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 10.png'
 
 
@@ -18,13 +18,15 @@ import Cart from './Cart'
 import Orders from './Orders'
 
 const menuData = [
-    { foodImage: firstMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' },
-    { foodImage: secondMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' },
-    { foodImage: thirdMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' },
-    { foodImage: forthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' },
-    { foodImage: fifthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' },
-    { foodImage: sixthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' }
+    { foodImage: firstMenuFood, foodName: 'Burger Meal', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '500', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' },
+    { foodImage: secondMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '1500', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' },
+    { foodImage: thirdMenuFood, foodName: 'Meat Balls', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '1000', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' },
+    { foodImage: forthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '2000', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' },
+    { foodImage: fifthMenuFood, foodName: 'Blueberry Toasts and smoothie', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '3000', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' },
+    { foodImage: sixthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '1000', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' }
 ]
+
+const newName = localStorage.getItem("name");
 
 const Dashboard = () => {
 
@@ -40,7 +42,7 @@ const Dashboard = () => {
                     <div className='dashboard-container-div'>
                         <div className='dashboard-header'>
                             <div>
-                                <h2>Good morning, Oghenevwede!</h2>
+                                <h2>Good morning, <span id='person-name'>{newName}</span></h2>
                                 <p>What delicious meal are you craving today?</p>
                             </div>
                             <div>
