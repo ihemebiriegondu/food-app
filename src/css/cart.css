@@ -127,7 +127,7 @@
     color: rgba(0, 0, 0, 0.69);
 }
 
-.total-div p span {
+.total-div p .span {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;

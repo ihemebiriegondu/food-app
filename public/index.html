@@ -98,6 +98,9 @@
         }
         preventDefault(event)
       } else {
+        localStorage.setItem("name", signupNameInput.value);
+        const newName = localStorage.getItem("name");
+
         document.getElementById("form2").action = '/login'
       }
     }

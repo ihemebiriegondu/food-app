@@ -37,7 +37,7 @@ const Cart = () => {
           </div>
 
           <div className='total-div'>
-            <p>Total: <span>N 30,000.00</span></p>
+            <p>Total: <span className='span'>N <span id='totalCheckoutValue'>0</span>.00</span></p>
           </div>
 
           <div className='button-div'>
