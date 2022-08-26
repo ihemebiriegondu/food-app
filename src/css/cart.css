@@ -67,8 +67,8 @@
     margin-bottom: 56px !important;
 }
 
-.table-container li .first-row-of-checkout {
-    display: flex;
+.table-container li .div .first-row-of-checkout {
+    display: flex !important;
 }
 
 .table-container img {
@@ -97,6 +97,10 @@
     align-items: center;
     color: #C92C33;
     margin-top: 0;
+}
+
+.remove:hover {
+    cursor: pointer;
 }
 
 .other-p {

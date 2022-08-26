@@ -1,5 +1,4 @@
 import React from 'react'
-import Cartlistitem from '../components/Cartlistitem';
 
 import GobackButton from '../components/GobackButton'
 
@@ -17,8 +16,6 @@ const Cart = () => {
     }
   }
 
-  const allFoodsData = JSON.parse(window.localStorage.getItem("allFoods"));
-
   return (
     <div className='backdrop cart-backdrop'>
       <div className='cart-container'>
@@ -33,8 +30,10 @@ const Cart = () => {
               <p className='col-2'>Sub-total</p>
             </div>
 
-            <Cartlistitem allFoodsData={allFoodsData} />
-            
+            <ul id='cart-list'>
+
+            </ul>
+
           </div>
 
           <div className='total-div'>
