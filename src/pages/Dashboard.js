@@ -25,7 +25,7 @@ const menuData = [
     { foodImage: fifthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' },
     { foodImage: sixthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: 'N1000' }
 ]
-
+//comment
 const Dashboard = () => {
 
     return (
