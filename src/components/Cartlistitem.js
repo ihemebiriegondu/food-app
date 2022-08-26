@@ -10,7 +10,7 @@ const Cartlistitem = ({ allFoodsData }) => {
                             <img src={item?.foodImage} alt='first food img' />
                             <div>
                                 <p className='foodname'>{item?.foodName}</p>
-                                <p className='remove'>Remove</p>
+                                <p className='remove remove-btn'>Remove</p>
                             </div>
                         </div>
                         <p className='col-1 other-p'>{item?.foodQuantity}</p>
