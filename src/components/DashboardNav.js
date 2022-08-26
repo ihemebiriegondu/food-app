@@ -37,11 +37,26 @@ const DashboardNav = () => {
         }
     }
 
+    function addActiveToLinkFunction(e) {
+        let i, links;
+
+        links = document.getElementsByClassName("dasboard-active-link");
+        for (i = 0; i < links.length; i++) {
+            links[i].className = links[i].className.replace(" active", "");
+        }
+        e.currentTarget.className += " active";
+    }
+
     function openYourOrders() {
-        //const openorderbtns = document.querySelectorAll(".your-order-open");
         const orderBackdrop = document.querySelector(".orders-backdrop");
 
         orderBackdrop.classList.add("active")
+    }
+
+    function openCart() {
+        const cartBackdrop = document.querySelector(".cart-backdrop");
+
+        cartBackdrop.classList.add("active")
     }
 
     return (
@@ -61,10 +76,14 @@ const DashboardNav = () => {
             </div>
 
             <ul className='dashboard-links'>
-                <li><Link className='link active' to='/dashboard'><AiFillHome className='dashboard-icon' /> <span className='content-to-be-hidden'>Dashboard</span></Link></li>
-                <li><Link className='link' to='/profile'><BiUserCircle className='dashboard-icon' /> <span className='content-to-be-hidden'>Your Profile</span></Link></li>
-                <li><p className='link link-with-tag your-order-open' onClick={openYourOrders}><span><IoCalendarClear className='dashboard-icon' /> <span className='content-to-be-hidden'> Orders</span></span> <span className='dashboard-tags order-tag content-to-be-hidden'>6</span></p></li>
-                <li><Link className='link link-with-tag' to='/cart'><span><FaShoppingCart className='dashboard-icon' /><span className='content-to-be-hidden'>  Your Cart</span></span> <span className='dashboard-tags cart-tag content-to-be-hidden'>6</span></Link></li>
+                <li><Link onClick={addActiveToLinkFunction} className='link active dasboard-active-link' to='/dashboard'><AiFillHome className='dashboard-icon' /> <span className='content-to-be-hidden'>Dashboard</span></Link></li>
+                <li><Link onClick={addActiveToLinkFunction} className='link dasboard-active-link' to='/dashboard'><BiUserCircle className='dashboard-icon' /> <span className='content-to-be-hidden'>Your Profile</span></Link></li>
+                <li><p className='link link-with-tag' onClick={() => {
+                    openYourOrders();
+                }}><span><IoCalendarClear className='dashboard-icon' /> <span className='content-to-be-hidden'> Orders</span></span> <span className='dashboard-tags order-tag content-to-be-hidden'>6</span></p></li>
+                <li><p onClick={() => {
+                    openCart();
+                }} className='link link-with-tag' to='/cart'><span><FaShoppingCart className='dashboard-icon' /><span className='content-to-be-hidden'>  Your Cart</span></span> <span className='dashboard-tags cart-tag content-to-be-hidden'>6</span></p></li>
             </ul>
         </nav>
 

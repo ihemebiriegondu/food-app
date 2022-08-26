@@ -1,11 +1,24 @@
 import React from 'react'
+import Cartlistitem from '../components/Cartlistitem';
 
-import firstMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 5 (3).png'
-import secondMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 6.png'
+import GobackButton from '../components/GobackButton'
 
 import '../css/cart.css'
 
 const Cart = () => {
+
+  function openCheckout() {
+    const checkoutBackdrop = document.querySelector(".checkout-backdrop");
+    checkoutBackdrop.classList.add("active")
+
+    const cartBackdrop = document.querySelector(".cart-backdrop");
+    if (cartBackdrop.classList.contains("active")) {
+      cartBackdrop.classList.remove("active")
+    }
+  }
+
+  const allFoodsData = JSON.parse(window.localStorage.getItem("allFoods"));
+
   return (
     <div className='backdrop cart-backdrop'>
       <div className='cart-container'>
@@ -20,34 +33,8 @@ const Cart = () => {
               <p className='col-2'>Sub-total</p>
             </div>
 
-            <ul>
-              <li className='row align-items-center'>
-                <div className='col-7 first-row-of-checkout'>
-                  <img src={firstMenuFood} alt='first food img' />
-                  <div>
-                    <p className='foodname'>Stir Fry Pasta</p>
-                    <p className='remove'>Remove</p>
-                  </div>
-                </div>
-                <p className='col-1 other-p'>3</p>
-                <p className='col-2 other-p'>N 1,000.00</p>
-                <p className='col-2 other-p'>N 3,000.00</p>
-              </li>
-
-              <li className='row align-items-center'>
-                <div className='col-7 first-row-of-checkout'>
-                  <img src={secondMenuFood} alt='first food img' />
-                  <div>
-                    <p className='foodname'>Stir Fry Pasta</p>
-                    <p className='remove'>Remove</p>
-                  </div>
-                </div>
-                <p className='col-1 other-p'>3</p>
-                <p className='col-2 other-p'>N 1,000.00</p>
-                <p className='col-2 other-p'>N 3,000.00</p>
-              </li>
-              
-            </ul>
+            <Cartlistitem allFoodsData={allFoodsData} />
+            
           </div>
 
           <div className='total-div'>
@@ -55,9 +42,11 @@ const Cart = () => {
           </div>
 
           <div className='button-div'>
-            <button>Checkout</button>
+            <button onClick={openCheckout}>Checkout</button>
           </div>
         </div>
+
+        <GobackButton buttontext={'Go Back'} />
       </div>
     </div>
   )

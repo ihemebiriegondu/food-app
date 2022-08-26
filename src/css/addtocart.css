@@ -7,7 +7,19 @@
 }
 
 .addtocart-backdrop {
-    display: none;
+    width: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.addtocart-backdrop.active {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.addtocart-backdrop.active .addtocart-container {
+    visibility: visible;
+    width: 37% !important;
+    transition: all 0.5s ease-in-out !important;
 }
 
 .addtocart-container {
@@ -16,10 +28,12 @@
     bottom: 0;
     right: 0;
     background: #FFFFFF;
-    width: 37%;
+    visibility: hidden;
+    width: 0 !important;
     padding: 128px 64px 117px 64px;
-    text-align: center;
     overflow-y: auto;
+    text-align: center;
+    transition: all 0.5s ease-in-out !important;
 }
 
 .addtocart-container img {
@@ -85,6 +99,10 @@
 .addtocart-container .add-to-cart-button-counter span:nth-of-type(1),
 .addtocart-container .add-to-cart-button-counter span:nth-of-type(3) {
     background: #F3C294;
+}
+
+.value-buttons:hover {
+    cursor: pointer;
 }
 
 .add-to-cart-button-container button {

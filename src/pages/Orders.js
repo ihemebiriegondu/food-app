@@ -2,23 +2,17 @@ import React from 'react'
 
 import firstMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 5 (3).png'
 import secondMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 6.png'
+import GobackButton from '../components/GobackButton'
 
 import '../css/orders.css'
 
 const Orders = () => {
 
-    function hideBackdrop() {
-        const orderBackdrop = document.querySelector(".orders-backdrop");
-        if (orderBackdrop.classList.contains("active")) {
-            orderBackdrop.classList.remove("active")
-        }
-    }
-
     return (
-        <div className='backdrop orders-backdrop' onClick={hideBackdrop}>
+        <div className='backdrop orders-backdrop'>
             <div className='orders-container'>
                 <div>
-                    <h4>Your Cart</h4>
+                    <h4>Your Orders</h4>
 
                     <div className='table-container'>
                         <div className='tableHeader row'>
@@ -58,6 +52,7 @@ const Orders = () => {
                         </ul>
                     </div>
                 </div>
+                <GobackButton buttontext={'Go back'} />
             </div>
         </div>
     )
