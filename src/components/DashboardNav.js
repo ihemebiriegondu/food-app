@@ -80,7 +80,7 @@ const DashboardNav = () => {
                 <li><Link onClick={addActiveToLinkFunction} className='link dasboard-active-link' to='/dashboard'><BiUserCircle className='dashboard-icon' /> <span className='content-to-be-hidden'>Your Profile</span></Link></li>
                 <li><p className='link link-with-tag' onClick={() => {
                     openYourOrders();
-                }}><span><IoCalendarClear className='dashboard-icon' /> <span className='content-to-be-hidden'> Orders</span></span> <span className='dashboard-tags order-tag content-to-be-hidden'>0</span></p></li>
+                }}><span><IoCalendarClear className='dashboard-icon' /> <span className='content-to-be-hidden'> Orders</span></span> <span className='dashboard-tags order-tag content-to-be-hidden' id='ordersAmount'>0</span></p></li>
                 <li><p onClick={() => {
                     openCart();
                 }} className='link link-with-tag' to='/cart'><span><FaShoppingCart className='dashboard-icon' /><span className='content-to-be-hidden'>  Your Cart</span></span> <span className='dashboard-tags cart-tag content-to-be-hidden' id='cartAmount'>0</span></p></li>
