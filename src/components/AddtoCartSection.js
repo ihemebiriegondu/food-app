@@ -16,8 +16,8 @@ function AddtoCartSection() {
         allFoods.forEach(food => {
             const cartList = document.getElementById("cart-list");
 
-            const lifirst = document.createElement("li");
-            lifirst.innerHTML =
+            const licart = document.createElement("li");
+            licart.innerHTML =
 
                 `   <div class='row align-items-center div'>
                         <div class='col-7 first-row-of-checkout'>
@@ -32,18 +32,14 @@ function AddtoCartSection() {
                         <p class='col-2 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
                     </div>
                 `;
-            cartList.insertBefore(lifirst, cartList.children[0]);
+            cartList.insertBefore(licart, cartList.children[0]);
+
             const cartListList = document.querySelectorAll("#cart-list li")
             document.getElementById("cartAmount").textContent = cartListList.length;
 
-            const cartListToAdd = document.querySelectorAll("#cart-list li #amounttoadd")
-            let cartListSum = 0;
-
-            for (let i = 0; i < cartListToAdd.length; i++) {
-                const newCartListToAdd = parseInt(cartListToAdd[i].textContent)
-                cartListSum += newCartListToAdd;
-            }
-            localStorage.setItem("totalCheckoutValue", cartListSum);
+            let totalCheckoutValue = localStorage.getItem("totalCheckoutValue");
+            
+            document.getElementById("totalCheckoutValue").textContent = totalCheckoutValue;
 
         });
     }
@@ -92,19 +88,26 @@ function AddtoCartSection() {
             </div>
         `;
         cartList.insertBefore(licart, cartList.children[0]);
+        
         const cartListList = document.querySelectorAll("#cart-list li")
         document.getElementById("cartAmount").textContent = cartListList.length;
 
         const cartListToAdd = document.querySelectorAll("#cart-list li #amounttoadd")
-        let cartListSum = 0;
+
+        //if (document.getElementById("totalCheckoutValue").textContent == '0')
+
+        let cartListSum = parseInt(document.getElementById("totalCheckoutValue").textContent);
 
         for (let i = 0; i < cartListToAdd.length; i++) {
             const newCartListToAdd = parseInt(cartListToAdd[i].textContent)
             cartListSum += newCartListToAdd;
         }
-        localStorage.setItem("totalCheckoutValue", cartListSum);
 
-        Quantity.textContent = "0";
+        localStorage.setItem("totalCheckoutValue", cartListSum);
+        let totalCheckoutValue = localStorage.getItem("totalCheckoutValue");
+        document.getElementById("totalCheckoutValue").textContent = totalCheckoutValue;
+        
+        document.getElementById("value-itself").textContent = "0";
 
 
         /*var current_tasks = document.querySelectorAll(".remove");

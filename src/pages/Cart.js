@@ -16,8 +16,6 @@ const Cart = () => {
     }
   }
 
-  const totalCheckoutValue = localStorage.getItem("totalCheckoutValue");
-
   return (
     <div className='backdrop cart-backdrop'>
       <div className='cart-container'>
@@ -39,7 +37,7 @@ const Cart = () => {
           </div>
 
           <div className='total-div'>
-            <p>Total: <span className='span'>N <span id='totalCheckoutValue'>{totalCheckoutValue}</span>.00</span></p>
+            <p>Total: <span className='span'>N <span id='totalCheckoutValue'>0</span>.00</span></p>
           </div>
 
           <div className='button-div'>
