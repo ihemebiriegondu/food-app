@@ -43,7 +43,7 @@ function AddtoCartSection() {
                 const newCartListToAdd = parseInt(cartListToAdd[i].textContent)
                 cartListSum += newCartListToAdd;
             }
-            document.getElementById("totalCheckoutValue").textContent = cartListSum;
+            localStorage.setItem("totalCheckoutValue", cartListSum);
 
         });
     }
@@ -102,7 +102,7 @@ function AddtoCartSection() {
             const newCartListToAdd = parseInt(cartListToAdd[i].textContent)
             cartListSum += newCartListToAdd;
         }
-        document.getElementById("totalCheckoutValue").textContent = cartListSum;
+        localStorage.setItem("totalCheckoutValue", cartListSum);
 
         Quantity.textContent = "0";
 
