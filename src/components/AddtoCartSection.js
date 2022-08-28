@@ -69,6 +69,13 @@ function AddtoCartSection() {
             totalFoodAmount: totalAmount.toString()
         }]));
 
+        localStorage.setItem("ordersFoods", JSON.stringify([...JSON.parse(localStorage.getItem("ordersFoods") || "[]"),
+        {
+            orderImage: Image.src,
+            orderName: Name.textContent,
+            orderQuantity: Quantity.textContent,
+            orderFoodAmount: totalAmount.toString()
+        }]));
 
         const licart = document.createElement("li");
         licart.innerHTML =
