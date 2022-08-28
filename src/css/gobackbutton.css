@@ -2,3 +2,17 @@
     border-radius: 5px !important;
     width: 20% !important;
 }
+
+@media (max-width: 850px) {
+    .goback {
+        border-radius: 5px !important;
+        width: 30% !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .goback {
+        border-radius: 5px !important;
+        width: 40% !important;
+    }
+}

@@ -16,15 +16,15 @@ const Checkout = () => {
         ordersFoods.forEach(food => {
             const ordersList = document.getElementById("orders-list");
 
-            const lifirst = document.createElement("li");
-            lifirst.innerHTML =
+            const liorders = document.createElement("li");
+            liorders.innerHTML =
 
                 `   <div class='row div'>
                         <div class='col-lg-7 col-6 first-row-of-checkout'>
                             <img src=${food.orderImage} alt='first food img' />
                             <div>
                                 <p class='foodname'>${food.orderName}</p>
-                                <p class='remove' onclick="removeTask(this)">Remove</p>
+                                <p class='remove' onclick="removeOrder(this)">Remove</p>
                             </div>
                         </div>
                         <p class='col-1 other-p'>${food.orderQuantity}</p>
@@ -32,7 +32,7 @@ const Checkout = () => {
                         <p class='col-2 pending-p'>Cooking</p>
                     </div>
                 `;
-            ordersList.insertBefore(lifirst, ordersList.children[0]);
+            ordersList.insertBefore(liorders, ordersList.children[0]);
 
             const ordersListList = document.querySelectorAll("#orders-list li")
             document.getElementById("ordersAmount").textContent = ordersListList.length;
@@ -43,29 +43,30 @@ const Checkout = () => {
 
 
     function addToOrdersFunction() {
-        if (localStorage.getItem("ordersFoods") == null) return;
-        let ordersFoods = Array.from(JSON.parse(localStorage.getItem("ordersFoods")));
+        if (localStorage.getItem("allFoods") == null) return;
+
+        let ordersFoods = Array.from(JSON.parse(localStorage.getItem("allFoods")));
 
         ordersFoods.forEach(food => {
             const ordersList = document.getElementById("orders-list");
 
-            const lifirst = document.createElement("li");
-            lifirst.innerHTML =
+            const liorders = document.createElement("li");
+            liorders.innerHTML =
 
                 `   <div class='row div'>
                         <div class='col-lg-7 col-6 first-row-of-checkout'>
-                            <img src=${food.orderImage} alt='first food img' />
+                            <img src=${food.foodImage} alt='first food img' />
                             <div>
-                                <p class='foodname'>${food.orderName}</p>
+                                <p class='foodname'>${food.foodName}</p>
                                 <p class='remove' onclick="removeTask(this)">Remove</p>
                             </div>
                         </div>
-                        <p class='col-1 other-p'>${food.orderQuantity}</p>
-                        <p class='col-lg-2 col-3 other-p'>N <span>${food.orderFoodAmount}</span>.00</p>
+                        <p class='col-1 other-p'>${food.foodQuantity}</p>
+                        <p class='col-lg-2 col-3 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
                         <p class='col-2 pending-p'>Cooking</p>
                     </div>
                 `;
-            ordersList.insertBefore(lifirst, ordersList.children[0]);
+            ordersList.insertBefore(liorders, ordersList.children[0]);
 
             const ordersListList = document.querySelectorAll("#orders-list li")
             document.getElementById("ordersAmount").textContent = ordersListList.length;
@@ -91,6 +92,9 @@ const Checkout = () => {
             }
 
         } else {
+
+            addToOrdersFunction()
+
             localStorage.removeItem("allFoods");
             document.getElementById("cartAmount").textContent = "0";
             document.getElementById("cart-list").innerHTML = "";
@@ -107,8 +111,6 @@ const Checkout = () => {
             document.getElementById("card-exp").value = ""
             document.getElementById("card-cvv").value = ""
             document.getElementById("card-pin").value = ""
-
-            addToOrdersFunction()
         }
     }
 

@@ -64,7 +64,8 @@
     margin-bottom: 47px;
 }
 
-.checkout-container form button, .checkout-container button {
+.checkout-container form button,
+.checkout-container button {
     background: #00302E;
     padding: 16px 0;
     width: 100%;
@@ -83,4 +84,58 @@
 
 .checkout-container .goback {
     width: 30% !important;
+}
+
+@media (max-width: 1250px) {
+    .checkout-backdrop.active .checkout-container {
+        width: 47% !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .checkout-backdrop.active .checkout-container {
+        width: 57% !important;
+    }
+
+    .checkout-container .goback {
+        width: 40% !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .checkout-backdrop.active .checkout-container {
+        width: 67% !important;
+    }
+
+    .checkout-container {
+        padding: 128px 40px 117px 40px;
+    }
+}
+
+@media (max-width: 670px) {
+    .checkout-backdrop.active .checkout-container {
+        width: 77% !important;
+    }
+}
+
+@media (max-width: 585px) {
+    .checkout-backdrop.active .checkout-container {
+        width: 87% !important;
+    }
+
+    .checkout-container {
+        padding: 128px 20px 117px 20px;
+    }
+}
+
+@media (max-width: 510px) {
+    .checkout-backdrop.active .checkout-container {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 350px) {
+    .checkout-container {
+        padding: 128px 5px 117px 5px;
+    }
 }

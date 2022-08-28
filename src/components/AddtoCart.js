@@ -11,7 +11,7 @@ import Counter from './Reactcounter';
 const AddtoCart = () => {
     return (
         <div className='backdrop addtocart-backdrop'>
-            <div className='addtocart-container'>
+            <div className='addtocart-container'> 
                 <div>
                     <div className=''>
                         <img src={firstMenuFood} alt='first-img' id='foodImage' />

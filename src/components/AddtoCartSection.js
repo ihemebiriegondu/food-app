@@ -20,7 +20,7 @@ function AddtoCartSection() {
             licart.innerHTML =
 
                 `   <div class='row align-items-center div'>
-                        <div class='col-7 first-row-of-checkout'>
+                        <div class='col-lg-7 col-6 first-row-of-checkout'>
                             <img src=${food.foodImage} alt='first food img' />
                             <div>
                                 <p class='foodname'>${food.foodName}</p>
@@ -29,7 +29,7 @@ function AddtoCartSection() {
                         </div>
                         <p class='col-1 other-p'>${food.foodQuantity}</p>
                         <p class='col-2 other-p'>N <span>${food.foodAmount}</span>.00</p>
-                        <p class='col-2 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
+                        <p class='col-lg-2 col-3 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
                     </div>
                 `;
             cartList.insertBefore(licart, cartList.children[0]);
