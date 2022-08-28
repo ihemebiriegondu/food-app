@@ -10,9 +10,10 @@ const Checkout = () => {
     }, [])
 
     function reloadOrderFunction() {
-        let allFoods = Array.from(JSON.parse(localStorage.getItem("allFoods")));
+        if (localStorage.getItem("ordersFoods") == null) return;
+        let ordersFoods = Array.from(JSON.parse(localStorage.getItem("ordersFoods")));
 
-        allFoods.forEach(food => {
+        ordersFoods.forEach(food => {
             const ordersList = document.getElementById("orders-list");
 
             const lifirst = document.createElement("li");
@@ -20,14 +21,14 @@ const Checkout = () => {
 
                 `   <div class='row div'>
                         <div class='col-lg-7 col-6 first-row-of-checkout'>
-                            <img src=${food.foodImage} alt='first food img' />
+                            <img src=${food.orderImage} alt='first food img' />
                             <div>
-                                <p class='foodname'>${food.foodName}</p>
+                                <p class='foodname'>${food.orderName}</p>
                                 <p class='remove' onclick="removeTask(this)">Remove</p>
                             </div>
                         </div>
-                        <p class='col-1 other-p'>${food.foodQuantity}</p>
-                        <p class='col-lg-2 col-3 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
+                        <p class='col-1 other-p'>${food.orderQuantity}</p>
+                        <p class='col-lg-2 col-3 other-p'>N <span>${food.orderFoodAmount}</span>.00</p>
                         <p class='col-2 pending-p'>Cooking</p>
                     </div>
                 `;
@@ -42,10 +43,10 @@ const Checkout = () => {
 
 
     function addToOrdersFunction() {
+        if (localStorage.getItem("ordersFoods") == null) return;
+        let ordersFoods = Array.from(JSON.parse(localStorage.getItem("ordersFoods")));
 
-        let allFoods = Array.from(JSON.parse(localStorage.getItem("allFoods")));
-
-        allFoods.forEach(food => {
+        ordersFoods.forEach(food => {
             const ordersList = document.getElementById("orders-list");
 
             const lifirst = document.createElement("li");
@@ -53,14 +54,14 @@ const Checkout = () => {
 
                 `   <div class='row div'>
                         <div class='col-lg-7 col-6 first-row-of-checkout'>
-                            <img src=${food.foodImage} alt='first food img' />
+                            <img src=${food.orderImage} alt='first food img' />
                             <div>
-                                <p class='foodname'>${food.foodName}</p>
+                                <p class='foodname'>${food.orderName}</p>
                                 <p class='remove' onclick="removeTask(this)">Remove</p>
                             </div>
                         </div>
-                        <p class='col-1 other-p'>${food.foodQuantity}</p>
-                        <p class='col-lg-2 col-3 other-p'>N <span>${food.totalFoodAmount}</span>.00</p>
+                        <p class='col-1 other-p'>${food.orderQuantity}</p>
+                        <p class='col-lg-2 col-3 other-p'>N <span>${food.orderFoodAmount}</span>.00</p>
                         <p class='col-2 pending-p'>Cooking</p>
                     </div>
                 `;
@@ -90,7 +91,10 @@ const Checkout = () => {
             }
 
         } else {
-            addToOrdersFunction()
+            localStorage.removeItem("allFoods");
+            document.getElementById("cartAmount").textContent = "0";
+            document.getElementById("cart-list").innerHTML = "";
+            document.getElementById("totalCheckoutValue").textContent = "0"
 
             const checkoutBackdrop = document.querySelector(".checkout-backdrop");
             if (checkoutBackdrop.classList.contains("active")) {
@@ -104,6 +108,7 @@ const Checkout = () => {
             document.getElementById("card-cvv").value = ""
             document.getElementById("card-pin").value = ""
 
+            addToOrdersFunction()
         }
     }
 
