@@ -160,7 +160,7 @@
 
 
 @media (max-width: 1330px) {
-    .cart.backdrop.active .cart-container {
+    .cart-backdrop.active .cart-container {
         visibility: visible;
         width: 70% !important;
         transition: all 0.5s ease-in-out !important;
@@ -168,7 +168,7 @@
 }
 
 @media (max-width: 1140px) {
-    .cart.backdrop.active .cart-container {
+    .cart-backdrop.active .cart-container {
         visibility: visible;
         width: 80% !important;
         transition: all 0.5s ease-in-out !important;
@@ -176,7 +176,7 @@
 }
 
 @media (max-width: 1000px) {
-    .cart.backdrop.active .cart-container {
+    .cart-backdrop.active .cart-container {
         visibility: visible;
         width: 90% !important;
         transition: all 0.5s ease-in-out !important;
@@ -184,17 +184,10 @@
 }
 
 @media (max-width: 890px) {
-    .cart.backdrop.active .cart-container {
+    .cart-backdrop.active .cart-container {
         visibility: visible;
         width: 100% !important;
         transition: all 0.5s ease-in-out !important;
-    }
-}
-
-@media (max-width: 573px) {
-    .cart-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
     }
 }
 

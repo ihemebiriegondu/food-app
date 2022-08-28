@@ -136,7 +136,7 @@
     width: 100%;
     margin: auto;
     margin-top: 40px !important;
-    text-align: center;
+    text-align: center; 
 }
 
 .orders-container button {
@@ -193,10 +193,4 @@
     }
 }
 
-@media (max-width: 573px) {
-    .orders-container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-}
 

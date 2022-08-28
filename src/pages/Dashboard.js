@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import DashboardNav from '../components/DashboardNav'
 import AddtoCart from '../components/AddtoCart.js'
 
@@ -26,9 +26,35 @@ const menuData = [
     { foodImage: sixthMenuFood, foodName: 'Stir Fry Pasta', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '1000', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' }
 ]
 
-const newName = localStorage.getItem("name");
 
 const Dashboard = () => {
+
+    useEffect(() => {
+        getTime()
+    }, [])
+    
+    function getTime() {
+        const d = new Date();
+        let hour = d.getHours();
+    
+        if (hour <= 12) {
+            let greeting = "Good morning, "
+            document.getElementById("greeting").textContent = greeting;
+        } else if (hour <= 15) {
+            let greeting = "Good afternoon, "
+            document.getElementById("greeting").textContent = greeting;
+        } else if (hour <= 23) {
+            let greeting = "Good evening, "
+            document.getElementById("greeting").textContent = greeting;
+        }
+    }
+
+
+    if (localStorage.getItem("name") == null) {
+        document.getElementById("person-name").textContent = "User"
+    }
+    const newName = localStorage.getItem("name");
+
 
     return (
         <div className='mainDashboard'>
@@ -42,7 +68,7 @@ const Dashboard = () => {
                     <div className='dashboard-container-div'>
                         <div className='dashboard-header'>
                             <div>
-                                <h2>Good morning, <span id='person-name'>{newName}</span></h2>
+                                <h2><span id='greeting'>Good morning, </span><span id='person-name'>{newName}</span></h2>
                                 <p>What delicious meal are you craving today?</p>
                             </div>
                             <div>

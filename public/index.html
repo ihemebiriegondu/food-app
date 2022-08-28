@@ -39,6 +39,17 @@
       event.parentElement.parentElement.parentElement.parentElement.remove();
     }
 
+    function removeOrder(event) {
+      let ordersFoods = Array.from(JSON.parse(localStorage.getItem("ordersFoods")));
+      ordersFoods.forEach(food => {
+        if (food.food === event.parentNode.children[1].value) {
+          ordersFoods.splice(ordersFoods.indexOf(food), 1);
+        }
+      });
+      localStorage.setItem("ordersFoods", JSON.stringify(ordersFoods));
+      event.parentElement.parentElement.parentElement.parentElement.remove();
+    }
+
     function showBtnSignUpFunction() {
       const signupPasswordInput = document.querySelector("#signup-password input")
 
