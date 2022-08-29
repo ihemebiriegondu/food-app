@@ -6,6 +6,40 @@ import { useNavigate } from 'react-router-dom'
 
 import '../css/signup.css'
 
+function showBtnSignUpFunction() {
+  const signupPasswordInput = document.querySelector("#signup-password input")
+
+  if (signupPasswordInput.type === 'password') {
+    signupPasswordInput.type = 'text'
+  } else {
+    signupPasswordInput.type = 'password'
+  }
+}
+
+function validateSignUp(event) {
+
+  const signupEmailInput = document.querySelector("#signup-email input");
+  const signupPasswordInput = document.querySelector("#signup-password input");
+  const signupNameInput = document.querySelector("#signup-name input");
+  const myAlert = document.getElementById("login-alert");
+
+  if (signupNameInput.value === '' || signupEmailInput.value === '' || signupPasswordInput.value === '') {
+    myAlert.classList.add("active");
+
+    setTimeout(hideAlert, 3000)
+    function hideAlert() {
+      myAlert.classList.remove("active");
+    }
+    event.preventDefault();
+  } else {
+    localStorage.setItem("name", signupNameInput.value);
+    localStorage.setItem("Email", signupEmailInput.value);
+    localStorage.setItem("password", signupPasswordInput.value);
+
+    document.getElementById("form2").action = '/login'
+  }
+}
+
 const Signup = () => {
 
   let navigate = useNavigate();
@@ -22,7 +56,9 @@ const Signup = () => {
           <div></div>
         </div>
         <div className='signup-form-div'>
-          <form onSubmit={window['validateSignUp']} id='form2'>
+          <form onSubmit={(event) => {
+            validateSignUp(event)
+          }} id='form2'>
             <h3>Welcome to Lilies!</h3>
             <div className='input-div' id='signup-name'>
               <input type={'text'} placeholder='Your First Name' />
@@ -32,7 +68,7 @@ const Signup = () => {
             </div>
             <div className='input-div password-div' id='signup-password'>
               <input type={'password'} placeholder='Your Password' />
-              <p onClick={window['showBtnSignUpFunction']}>show</p>
+              <p onClick={showBtnSignUpFunction}>show</p>
             </div>
             <div className='btn-div'>
               <button>sign up</button>

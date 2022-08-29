@@ -83,6 +83,10 @@
     border-radius: 12px;
 }
 
+.dasboard-active-link:hover {
+    cursor: pointer;
+}
+
 .dashboard-icon {
     width: 24px;
     height: 24px;

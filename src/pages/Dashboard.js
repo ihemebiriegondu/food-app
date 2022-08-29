@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import DashboardNav from '../components/DashboardNav'
 import AddtoCart from '../components/AddtoCart.js'
 
-import heroPerson from '../assests/40w 1.png'
 import firstMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 4.png'
 import secondMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 2.png'
 import thirdMenuFood from '../assests/bon-vivant-qom5MPOER-I-unsplash 3.png'
@@ -16,6 +15,7 @@ import Menu from '../components/Menu'
 import Checkout from '../components/Checkout'
 import Cart from './Cart'
 import Orders from './Orders'
+import Profile from './Profile'
 
 const menuData = [
     { foodImage: firstMenuFood, foodName: 'Burger Meal', foodInfo: 'The in-house pasta and chicken by chef Moose', foodAmount: '500', foodInfoForAdd: 'Just have a single bite of this Black Forest pastry and it will all make a proper sense to you. The kick of cherry and rich chocolate of this super light, airy pastry will definitely make you feel "wow". The perfect combination of cherry cream and rich chocolate can provide the ultimate fulfillment to your dessert craving.' },
@@ -32,11 +32,11 @@ const Dashboard = () => {
     useEffect(() => {
         getTime()
     }, [])
-    
+
     function getTime() {
         const d = new Date();
         let hour = d.getHours();
-    
+
         if (hour <= 12) {
             let greeting = "Good morning, "
             document.getElementById("greeting").textContent = greeting;
@@ -55,6 +55,7 @@ const Dashboard = () => {
     }
     const newName = localStorage.getItem("name");
 
+    const profilePicture = localStorage.getItem("profilePicture");
 
     return (
         <div className='mainDashboard'>
@@ -73,7 +74,9 @@ const Dashboard = () => {
                             </div>
                             <div>
                                 <div>
-                                    <img src={heroPerson} alt='person img' />
+                                    <div className='dashboard-hero-img-div'>
+                                        <img src={profilePicture} alt='person img' />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -84,6 +87,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
+            <Profile />
             <AddtoCart />
             <Checkout />
             <Cart />
