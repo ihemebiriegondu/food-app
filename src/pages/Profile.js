@@ -31,7 +31,6 @@ function validateUpdatedProfile(event) {
 function validateUpdatedPassword(event) {
   const profileOldPassword = document.getElementById("profile-oldpassword");
   const profileNewPassword = document.getElementById("profile-newpassword");
-  //let signupPasswordInput = localStorage.getItem("password");
   const myAlert = document.getElementById("profile-alert");
 
   if (profileOldPassword.value === "" && profileNewPassword.value === "") {
@@ -101,7 +100,7 @@ const Profile = () => {
 
   function loadProfileImage(event) {
     localStorage.setItem("profilePicture", URL.createObjectURL(event.target.files[0]))
-    document.getElementById("profile-image").src = URL.createObjectURL(event.target.files[0]);
+    document.getElementById("profile-image").src = localStorage.getItem("profilePicture");
   }
 
 
@@ -130,7 +129,7 @@ const Profile = () => {
               <img src={heroPerson} alt='person img' id='profile-image' />
             </div>
             <div className=''>
-              <input id="profile-image-file" type="file" onChange={(event) => {
+              <input id="profile-image-file" type="file" capture onChange={(event) => {
                 loadProfileImage(event)
               }} />
               <label for='profile-image-file'>
