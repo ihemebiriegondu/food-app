@@ -129,7 +129,7 @@ const Profile = () => {
               <img src={heroPerson} alt='person img' id='profile-image' />
             </div>
             <div className=''>
-              <input id="profile-image-file" type="file" capture onChange={(event) => {
+              <input id="profile-image-file" type="file" onChange={(event) => {
                 loadProfileImage(event)
               }} />
               <label for='profile-image-file'>

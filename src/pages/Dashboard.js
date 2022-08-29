@@ -30,7 +30,8 @@ const menuData = [
 const Dashboard = () => {
 
     useEffect(() => {
-        getTime()
+        getTime();
+        updatePP();
     }, [])
 
     function getTime() {
@@ -48,6 +49,17 @@ const Dashboard = () => {
             document.getElementById("greeting").textContent = greeting;
         }
     }
+
+    
+  function updatePP() {
+
+    if (localStorage.getItem("profilePicture") == null) {
+      localStorage.setItem("profilePicture", document.getElementById("alternate-img").src)
+      document.getElementById("profile-image").src = document.getElementById("alternate-img").src;
+    } else {
+      document.getElementById("profile-image").src = localStorage.getItem("profilePicture")
+    }
+  }
 
 
     if (localStorage.getItem("name") == null) {
