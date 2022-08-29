@@ -54,8 +54,8 @@ const Dashboard = () => {
   function updatePP() {
 
     if (localStorage.getItem("profilePicture") == null) {
-      localStorage.setItem("profilePicture", document.getElementById("alternate-img").src)
-      document.getElementById("profile-image").src = document.getElementById("alternate-img").src;
+      localStorage.setItem("profilePicture", "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg")
+      document.getElementById("profile-image").src = 'https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg';
     } else {
       document.getElementById("profile-image").src = localStorage.getItem("profilePicture")
     }
