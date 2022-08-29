@@ -6,6 +6,43 @@ import { useNavigate } from 'react-router-dom'
 
 import '../css/login.css'
 
+
+function showBtnLoginFunction() {
+  const loginPasswordInput = document.querySelector("#login-password input")
+
+  if (loginPasswordInput.type === 'password') {
+    loginPasswordInput.type = 'text'
+  } else {
+    loginPasswordInput.type = 'password'
+  }
+}
+
+
+function validateLogin(event) {
+
+  const loginEmailInput = document.querySelector("#login-email input");
+  const loginPasswordInput = document.querySelector("#login-password input");
+  const myAlert = document.getElementById("login-alert");
+
+  let signupEmailInput = localStorage.getItem("Email");
+  let signupPasswordInput = localStorage.getItem("password");
+
+  if (loginEmailInput.value === '' || loginPasswordInput.value === '' || loginEmailInput.value !== signupEmailInput || loginPasswordInput.value !== signupPasswordInput) {
+    myAlert.classList.add("active");
+
+    setTimeout(hideAlert, 3000)
+    function hideAlert() {
+      myAlert.classList.remove("active");
+    }
+    event.preventDefault();
+  } else {
+    document.getElementById("form1").action = '/dashboard'
+  }
+}
+
+
+
+
 const Login = () => {
   let navigate = useNavigate();
 
@@ -21,14 +58,16 @@ const Login = () => {
           <div></div>
         </div>
         <div className='login-form-div'>
-          <form onSubmit={window['validateLogin']} id='form1'>
+          <form onSubmit={(event) => {
+            validateLogin(event)
+          }} id='form1'>
             <h3>Welcome Back!</h3>
             <div className='input-div' id='login-email'>
               <input type={'email'} placeholder='Your Email address' />
             </div>
             <div className='input-div password-div' id='login-password'>
               <input type={'password'} placeholder='Your Password' />
-              <p onClick={window['showBtnLoginFunction']}>show</p>
+              <p onClick={showBtnLoginFunction}>show</p>
             </div>
             <div className='btn-div'>
               <button type='submit'>Login</button>

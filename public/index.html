@@ -50,72 +50,7 @@
       event.parentElement.parentElement.parentElement.parentElement.remove();
     }
 
-    function showBtnSignUpFunction() {
-      const signupPasswordInput = document.querySelector("#signup-password input")
-
-      if (signupPasswordInput.type == 'password') {
-        signupPasswordInput.type = 'text'
-      } else {
-        signupPasswordInput.type = 'password'
-      }
-    }
-
-    function showBtnLoginFunction() {
-      const loginPasswordInput = document.querySelector("#login-password input")
-
-      if (loginPasswordInput.type == 'password') {
-        loginPasswordInput.type = 'text'
-      } else {
-        loginPasswordInput.type = 'password'
-      }
-    }
-
-    function preventDefault(event) {
-      event.preventDefault();
-    }
-
-    function validateLogin() {
-
-      const loginEmailInput = document.querySelector("#login-email input");
-      const loginPasswordInput = document.querySelector("#login-password input");
-      const myAlert = document.getElementById("login-alert");
-
-      if (loginEmailInput.value == '' || loginPasswordInput.value == '') {
-        myAlert.classList.add("active");
-
-        setTimeout(hideAlert, 3000)
-        function hideAlert() {
-          myAlert.classList.remove("active");
-        }
-        preventDefault(event)
-      } else {
-        document.getElementById("form1").action = '/dashboard'
-      }
-    }
-
-    function validateSignUp() {
-
-      const signupEmailInput = document.querySelector("#signup-email input");
-      const signupPasswordInput = document.querySelector("#signup-password input");
-      const signupNameInput = document.querySelector("#signup-name input");
-      const myAlert = document.getElementById("login-alert");
-
-      if (signupNameInput.value == '' || signupEmailInput.value == '' || signupPasswordInput.value == '') {
-        myAlert.classList.add("active");
-
-        setTimeout(hideAlert, 3000)
-        function hideAlert() {
-          myAlert.classList.remove("active");
-        }
-        preventDefault(event)
-      } else {
-        localStorage.setItem("name", signupNameInput.value);
-        const newName = localStorage.getItem("name");
-
-        document.getElementById("form2").action = '/login'
-      }
-    }
-
+    
   </script>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>

@@ -56,9 +56,16 @@
     color: rgba(0, 0, 0, 0.69);
 }
 
-.dashboard-header img {
+.dashboard-hero-img-div {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+} 
+
+.dashboard-hero-img-div img {
+    height: 100%;
+    width: 100%;
 }
 
 
