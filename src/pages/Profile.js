@@ -91,8 +91,8 @@ const Profile = () => {
   function updatePP() {
 
     if (localStorage.getItem("profilePicture") == null) {
-      localStorage.setItem("profilePicture", document.getElementById("alternate-img").src)
-      document.getElementById("profile-image").src = document.getElementById("alternate-img").src;
+      localStorage.setItem("profilePicture", "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg")
+      document.getElementById("profile-image").src = "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg";
     } else {
       document.getElementById("profile-image").src = localStorage.getItem("profilePicture")
     }
@@ -126,7 +126,7 @@ const Profile = () => {
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <div className='profile-intro-div m-auto d-flex align-items-baseline'>
             <div className='profile-img-div me-4'>
-              <img src={heroPerson} alt='person img' id='profile-image' />
+              <img src='https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg' alt='person img' id='profile-image' />
             </div>
             <div className=''>
               <input id="profile-image-file" type="file" onChange={(event) => {
@@ -145,7 +145,7 @@ const Profile = () => {
           }}>
             <h6 className='mb-5'>Personal details</h6>
 
-            <div className='row row-cols-2'>
+            <div className='row row-cols-lg-2'>
               <div>
                 <label for='profile-name'>Name</label>
                 <input id='profile-name' type={'text'} name="profile-name" defaultValue={newName} />
@@ -168,7 +168,7 @@ const Profile = () => {
           }}>
             <h6 className='mb-5 mt-5'>Change password</h6>
 
-            <div className='row row-cols-2'>
+            <div className='row row-cols-lg-2'>
               <div>
                 <label for='profile-oldpassword'>Old password</label>
                 <input id='profile-oldpassword' type={'password'} />
