@@ -67,6 +67,9 @@ const Dashboard = () => {
     }
     const newName = localStorage.getItem("name");
 
+    if (localStorage.getItem("profilePicture == null")) {
+        document.getElementById("personImage").src = "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg";
+    }
     const profilePicture = localStorage.getItem("profilePicture");
 
     return (
@@ -87,7 +90,8 @@ const Dashboard = () => {
                             <div>
                                 <div>
                                     <div className='dashboard-hero-img-div'>
-                                        <img src={profilePicture} alt='person img' />
+                                        <img src={profilePicture} id='personImage'
+                                        onerror="this.src='https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg'" alt='' />
                                     </div>
                                 </div>
                             </div>
