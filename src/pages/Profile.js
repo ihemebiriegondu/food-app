@@ -126,7 +126,11 @@ const Profile = () => {
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <div className='profile-intro-div m-auto d-flex flex-sm-row flex-column align-items-sm-baseline align-items-center'>
             <div className='profile-img-div me-4 mb-sm-0 mb-4'>
-              <img src='https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg' onerror="this.src='https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg'" alt='' id='profile-image' />
+              <img src='https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg'
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg";
+                }} alt='' id='profile-image' />
             </div>
             <div className='m-0 p-0'>
               <input id="profile-image-file" type="file" accept='images/jpeg, images/png, images/jpg' onChange={(event) => {
