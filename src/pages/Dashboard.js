@@ -27,6 +27,8 @@ const menuData = [
 ]
 
 
+
+
 const Dashboard = () => {
 
     useEffect(() => {
@@ -50,16 +52,16 @@ const Dashboard = () => {
         }
     }
 
-    
-  function updatePP() {
 
-    if (localStorage.getItem("profilePicture") == null) {
-      localStorage.setItem("profilePicture", "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg")
-      document.getElementById("profile-image").src = 'https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg';
-    } else {
-      document.getElementById("profile-image").src = localStorage.getItem("profilePicture")
+    function updatePP() {
+
+        if (localStorage.getItem("profilePicture") == null) {
+            localStorage.setItem("profilePicture", "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg")
+            document.getElementById("profile-image").src = 'https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg';
+        } else {
+            document.getElementById("profile-image").src = localStorage.getItem("profilePicture")
+        }
     }
-  }
 
 
     if (localStorage.getItem("name") == null) {
@@ -91,7 +93,11 @@ const Dashboard = () => {
                                 <div>
                                     <div className='dashboard-hero-img-div'>
                                         <img src={profilePicture} id='personImage'
-                                        onerror="this.src='https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg'" alt='' />
+                                            onError={({ currentTarget }) => {
+                                                currentTarget.onerror = null; // prevents looping
+                                                currentTarget.src = "https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg";
+                                            }}
+                                            alt='' />
                                     </div>
                                 </div>
                             </div>
