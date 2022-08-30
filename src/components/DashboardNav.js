@@ -94,7 +94,7 @@ const DashboardNav = () => {
                     closeProfile()
                 }} className='link active dasboard-active-link mb-3' to='/dashboard'><AiFillHome className='dashboard-icon' /> <span className='content-to-be-hidden'>Dashboard</span></Link></li>
 
-                <li><p className='link dasboard-active-link' onClick={(e) => {
+                <li><p className='link dasboard-active-link mb-1' onClick={(e) => {
                     addActiveToLinkFunction(e)
                     openProfile();
                 }} ><BiUserCircle className='dashboard-icon' /> <span className='content-to-be-hidden'>Your Profile</span></p></li>

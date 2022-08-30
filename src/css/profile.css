@@ -98,3 +98,21 @@
     line-height: 36px;
     color: #00302E;
 }
+
+@media (max-width: 700px) {
+    .profile-container {
+        padding: 139px 49px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-container {
+        padding: 139px 29px;
+    }
+}
+
+@media (max-width: 450px) {
+    .profile-container {
+        padding: 139px 19px;
+    }
+}
